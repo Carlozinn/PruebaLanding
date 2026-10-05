@@ -66,3 +66,15 @@ Después abre `index.html` directamente en tu navegador, o usa la extensión
 
 - **`main`** – versión estable publicada en GitHub Pages.
 - **`develop`** – rama de integración; cada rama de funcionalidad se fusiona aquí antes de pasar a `main`.
+
+## 📋 Changelog
+
+### v1.0.0 – 2025-01-15
+
+- Primera versión completa de la landing page Coyoteando.
+- 5 secciones: Inicio, ¿Quiénes somos?, Productos / Servicios, Contacto y Políticas de seguridad.
+- Catálogo de productos renderizado con JavaScript y filtros por categoría.
+- Formulario de contacto validado con JavaScript.
+- Acordeón accesible en Políticas de seguridad.
+- Diseño responsive (desktop, tablet y móvil) con menú hamburguesa.
+- Publicación en GitHub Pages.
