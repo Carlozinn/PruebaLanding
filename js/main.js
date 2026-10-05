@@ -201,6 +201,34 @@ function iniciarHamburger() {
     btn.setAttribute('aria-expanded', String(isOpen));
     btn.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú de navegación');
   });
+
+  const cerrarMenu = () => {
+    menu.classList.remove('open');
+    btn.setAttribute('aria-expanded', 'false');
+    btn.setAttribute('aria-label', 'Abrir menú de navegación');
+  };
+
+  // Cerrar al hacer clic en cualquier enlace del menú
+  menu.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', cerrarMenu);
+  });
+
+  // Cerrar con la tecla Escape
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && menu.classList.contains('open')) {
+      cerrarMenu();
+      btn.focus();
+    }
+  });
+
+  // Cerrar al hacer clic fuera del menú
+  document.addEventListener('click', e => {
+    if (menu.classList.contains('open') &&
+        !btn.contains(e.target) &&
+        !menu.contains(e.target)) {
+      cerrarMenu();
+    }
+  });
 }
 
 /* ============================================================
