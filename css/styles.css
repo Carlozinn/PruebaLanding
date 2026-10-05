@@ -567,3 +567,35 @@ h1, h2, h3, h4, h5 {
   font-size: 0.9rem;
   opacity: 0.9;
 }
+
+/* ============================================================
+   MENÚ MÓVIL (≤ 768px)
+   ============================================================ */
+@media (max-width: 768px) {
+  .hamburger { display: flex; }
+
+  .nav-menu {
+    position: fixed;
+    top: 72px;
+    left: 0;
+    right: 0;
+    background: rgba(243, 237, 228, 0.98);
+    backdrop-filter: blur(14px);
+    flex-direction: column;
+    align-items: center;
+    padding: 2.5rem 1rem;
+    gap: 1rem;
+    transform: translateY(-110%);
+    transition: transform 0.3s ease;
+    border-bottom: 3px solid var(--clr-primary);
+    z-index: 99;
+  }
+  .nav-menu.open { transform: translateY(0); }
+
+  .nav-link { font-size: 1rem; padding: 0.5rem; }
+}
+
+/* Animación X del botón hamburguesa cuando el menú está abierto */
+.hamburger[aria-expanded="true"] .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.hamburger[aria-expanded="true"] .bar:nth-child(2) { opacity: 0; }
+.hamburger[aria-expanded="true"] .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
