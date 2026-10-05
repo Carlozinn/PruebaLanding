@@ -18,3 +18,27 @@ HTML5, CSS3 y JavaScript puro, sin frameworks, y se publica con GitHub Pages.
 |------------|--------|-------------------|
 | Carlos | [@Carlozinn](https://github.com/Carlozinn) | Estructura base, header, Inicio, Productos, filtros, paleta, menú móvil, GitHub Pages, accesibilidad, README y release |
 | Jordi  | _pendiente_ | Quiénes somos, Contacto, validación, Políticas, footer, responsive y animaciones |
+
+## 🗂 Estructura del proyecto
+
+```
+Coyoteando/
+├── index.html        # Landing page (5 secciones)
+├── css/
+│   └── styles.css    # Estilos, paleta y responsive
+├── js/
+│   └── main.js       # Catálogo dinámico, filtros, menú y navegación
+├── images/
+│   └── logo.png      # Logo / mascota Coyoteando
+└── README.md
+```
+
+## 🚀 Ejecutar localmente
+
+```bash
+git clone https://github.com/Carlozinn/Coyoteando.git
+cd Coyoteando
+```
+
+Después abre `index.html` directamente en tu navegador, o usa la extensión
+**Live Server** de VS Code (clic derecho sobre `index.html` → *Open with Live Server*).
