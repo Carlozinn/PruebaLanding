@@ -91,6 +91,53 @@ h1, h2, h3, h4, h5 {
 .accent { color: var(--clr-primary); }
 
 /* ============================================================
+   BOTONES BASE
+   ============================================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.8rem 1.9rem;
+  border-radius: 50px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.3s;
+}
+
+.btn-full {
+  width: 100%;
+  justify-content: center;
+}
+
+/* ============================================================
+   ACCESIBILIDAD – Skip link y foco visible
+   ============================================================ */
+.skip-link {
+  position: fixed;
+  top: -9999px;
+  left: 1rem;
+  z-index: 9999;
+  background: var(--clr-cyan);
+  color: var(--clr-dark-brown);
+  font-weight: 700;
+  padding: 0.75rem 1.25rem;
+  border-radius: 12px;
+}
+.skip-link:focus { top: 1rem; }
+
+/* Foco visible global (WCAG 2.1 – nivel AA) */
+:focus-visible {
+  outline: 3px solid var(--clr-cyan);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ============================================================
    HEADER / NAVBAR
    ============================================================ */
 .site-header {
