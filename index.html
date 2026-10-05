@@ -10,6 +10,45 @@
 </head>
 <body>
 
+  <!-- Enlace de salto para accesibilidad -->
+  <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+
+  <!-- ====================================================
+       HEADER / BARRA DE NAVEGACIÓN
+       ==================================================== -->
+  <header class="site-header" id="site-header">
+    <nav class="navbar" aria-label="Navegación principal">
+
+      <a href="#inicio" class="nav-logo">
+        <img src="images/logo.png" alt="Logo Coyoteando" width="160" height="60" />
+      </a>
+
+      <!-- Botón hamburguesa (visible solo en móvil) -->
+      <button
+        class="hamburger"
+        id="hamburger-btn"
+        aria-label="Abrir menú"
+        aria-expanded="false"
+        aria-controls="nav-menu"
+        type="button"
+      >
+        <span class="bar" aria-hidden="true"></span>
+        <span class="bar" aria-hidden="true"></span>
+        <span class="bar" aria-hidden="true"></span>
+      </button>
+
+      <!-- Menú principal -->
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#inicio"        class="nav-link">Inicio</a></li>
+        <li><a href="#quienes-somos" class="nav-link">¿Quiénes somos?</a></li>
+        <li><a href="#productos"     class="nav-link">Productos / Servicios</a></li>
+        <li><a href="#contacto"      class="nav-link">Contacto</a></li>
+        <li><a href="#politicas"     class="nav-link">Políticas de seguridad</a></li>
+      </ul>
+
+    </nav>
+  </header>
+
   <!-- INICIO -->
 
   <!-- QUIENES SOMOS -->
