@@ -10,3 +10,15 @@ Thumbs.db
 
 # Dependencias
 node_modules/
+
+# Respaldos y temporales
+*.bak
+*.tmp
+*.swp
+
+# Entorno
+.env
+
+# Otros sistemas / IDEs
+desktop.ini
+.idea/
