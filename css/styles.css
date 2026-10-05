@@ -27,6 +27,12 @@
   /* Bordes y transiciones */
   --radius: 12px;
   --tr:     0.3s ease;
+  --clr-light: #FAF7F2;  /* Fondo de sección alternada */
+  --sp-xs:  0.5rem;
+  --radius-lg: 20px;
+  --shadow-sm: 0 2px 8px rgba(20,16,13,0.08);
+  --shadow-md: 0 4px 20px rgba(20,16,13,0.14);
+  --shadow-cyan: 0 0 22px rgba(34,196,242,0.25);
 }
 
 /* ============================================================
@@ -607,3 +613,99 @@ h1, h2, h3, h4, h5 {
   color: var(--clr-brown);
 }
 .servicios-nota abbr { text-decoration: underline dotted; cursor: help; }
+
+/* ============================================================
+   QUIÉNES SOMOS
+   ============================================================ */
+.section-quienes {
+  background: var(--clr-light);
+}
+
+.quienes-historia {
+  max-width: 760px;
+  margin: 0 auto var(--sp-xl);
+  text-align: center;
+}
+.quienes-historia p {
+  margin-bottom: var(--sp-sm);
+  font-size: 1.05rem;
+}
+
+/* Grid Misión / Visión / Valores */
+.mvv-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-md);
+  margin-bottom: var(--sp-xl);
+}
+
+.mvv-card {
+  background: var(--clr-card);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-lg);
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--tr), box-shadow var(--tr);
+}
+.mvv-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+
+.mvv-icon {
+  font-size: 2.6rem;
+  margin-bottom: var(--sp-sm);
+}
+
+.mvv-card h3 {
+  font-size: 1.2rem;
+  color: var(--clr-primary);
+  margin-bottom: var(--sp-xs);
+}
+
+.values-list {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  font-size: 0.93rem;
+}
+
+/* Estadísticas */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-sm);
+  background: var(--clr-dark-brown);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-lg);
+}
+
+.stat-item {
+  text-align: center;
+  color: var(--clr-white);
+}
+
+.stat-number {
+  display: block;
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3vw, 2.1rem);
+  font-weight: 700;
+  color: var(--clr-cyan);
+  margin-bottom: 0.3rem;
+}
+
+.stat-label {
+  font-size: 0.82rem;
+  opacity: 0.85;
+}
+
+
+/* ============================================================
+   RESPONSIVE – Quiénes somos en celular
+   ============================================================ */
+@media (max-width: 768px) {
+  .mvv-grid  { grid-template-columns: 1fr; }
+  .stats-row { grid-template-columns: 1fr 1fr; }
+}
