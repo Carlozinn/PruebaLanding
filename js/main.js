@@ -166,12 +166,36 @@ function renderProductos(filtro) {
   grid.setAttribute('aria-label', `Catálogo de productos – ${filtrados.length} resultado(s)`);
 }
 
+/** Inicializa los botones de filtro */
+function iniciarFiltros() {
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  if (!filterBtns.length) return;
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Quitar activo de todos
+      filterBtns.forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-pressed', 'false');
+      });
+      // Activar el seleccionado
+      btn.classList.add('active');
+      btn.setAttribute('aria-pressed', 'true');
+
+      renderProductos(btn.dataset.filter || 'todos');
+    });
+  });
+}
+
 /* ============================================================
    INICIALIZACIÓN – DOMContentLoaded
    ============================================================ */
 document.addEventListener('DOMContentLoaded', () => {
   // 1. Renderizar el catálogo completo al cargar
   renderProductos('todos');
+
+  // 2. Iniciar filtros por categoría
+  iniciarFiltros();
 
   // Módulos pendientes: catálogo, filtros, menú hamburguesa y navegación activa
 });
