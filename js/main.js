@@ -267,6 +267,89 @@ function iniciarNavActiva() {
 }
 
 /* ============================================================
+   4. VALIDACIÓN DEL FORMULARIO DE CONTACTO
+   ============================================================ */
+
+/** Reglas de validación por campo */
+const VALIDADORES = {
+  nombre: {
+    validar: v => v.trim().length >= 2,
+    msg: 'El nombre debe tener al menos 2 caracteres.'
+  },
+  correo: {
+    validar: v => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()),
+    msg: 'Ingresa un correo electrónico válido (ej: tu@correo.com).'
+  },
+  mensaje: {
+    validar: v => v.trim().length >= 10,
+    msg: 'El mensaje debe tener al menos 10 caracteres.'
+  }
+};
+
+/** Aplica el estado visual a un campo (correcto / error) */
+function setEstadoCampo(input, esValido, msg) {
+  const errorEl = document.getElementById(`${input.id}-error`);
+  input.classList.toggle('error',   !esValido);
+  input.classList.toggle('success',  esValido && input.value.trim() !== '');
+  if (errorEl) errorEl.textContent = esValido ? '' : msg;
+}
+
+/** Valida un campo individual y devuelve true si es válido */
+function validarCampo(input) {
+  const regla = VALIDADORES[input.name];
+  if (!regla) return true;
+
+  const vacio = input.value.trim() === '';
+  if (vacio) {
+    setEstadoCampo(input, false, 'Este campo es obligatorio.');
+    return false;
+  }
+  const esValido = regla.validar(input.value);
+  setEstadoCampo(input, esValido, regla.msg);
+  return esValido;
+}
+
+function iniciarFormulario() {
+  const form       = document.getElementById('contact-form');
+  const successMsg = document.getElementById('form-success');
+  if (!form || !successMsg) return;
+
+  const campos = form.querySelectorAll('.form-input');
+
+  // Validación en tiempo real al salir del campo (blur)
+  campos.forEach(input => {
+    input.addEventListener('blur', () => validarCampo(input));
+    // Limpiar error mientras el usuario escribe (solo si ya tenía error)
+    input.addEventListener('input', () => {
+      if (input.classList.contains('error')) validarCampo(input);
+    });
+  });
+
+  // Envío del formulario
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+
+    let todoValido = true;
+    campos.forEach(input => {
+      if (!validarCampo(input)) todoValido = false;
+    });
+
+    if (todoValido) {
+      // Simulamos el envío exitoso
+      successMsg.removeAttribute('hidden');
+      form.reset();
+      campos.forEach(input => input.classList.remove('success', 'error'));
+      // Ocultar mensaje después de 5 segundos
+      setTimeout(() => successMsg.setAttribute('hidden', ''), 5000);
+    } else {
+      // Enfocar el primer campo con error
+      const primerError = form.querySelector('.form-input.error');
+      if (primerError) primerError.focus();
+    }
+  });
+}
+
+/* ============================================================
    INICIALIZACIÓN – DOMContentLoaded
    ============================================================ */
 document.addEventListener('DOMContentLoaded', () => {
@@ -281,6 +364,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 4. Enlace activo según el scroll
   iniciarNavActiva();
+
+  // 5. Validación del formulario de contacto
+  iniciarFormulario();
 
   // Módulos de Jordi (formulario, acordeón, footer) se registran en sus ramas
 });
