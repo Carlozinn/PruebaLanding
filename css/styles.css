@@ -216,6 +216,31 @@ a { color: inherit; text-decoration: none; }
   width: 100%;
   max-width: 480px;
   filter: drop-shadow(0 20px 60px rgba(232,145,58,0.25));
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-16px); }
+}
+
+.hero-scroll-hint {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: bounce 2s ease-in-out infinite;
+}
+
+.scroll-arrow {
+  font-size: 1.1rem;
+  color: var(--clr-primary);
+  opacity: 0.6;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50%      { transform: translateX(-50%) translateY(8px); }
 }
 
 /* Botones del hero */
@@ -241,4 +266,16 @@ a { color: inherit; text-decoration: none; }
   background: var(--clr-dark-brown);
   color: var(--clr-white);
   transform: translateY(-3px);
+}
+
+/* ============================================================
+   PREFERS-REDUCED-MOTION – Accesibilidad
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration:  0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }
