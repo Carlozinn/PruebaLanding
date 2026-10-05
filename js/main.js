@@ -188,6 +188,22 @@ function iniciarFiltros() {
 }
 
 /* ============================================================
+   2. MENÚ HAMBURGUESA
+   ============================================================ */
+function iniciarHamburger() {
+  const btn  = document.getElementById('hamburger-btn');
+  const menu = document.getElementById('nav-menu');
+  if (!btn || !menu) return;
+
+  // Toggle al hacer clic
+  btn.addEventListener('click', () => {
+    const isOpen = menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded', String(isOpen));
+    btn.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú de navegación');
+  });
+}
+
+/* ============================================================
    INICIALIZACIÓN – DOMContentLoaded
    ============================================================ */
 document.addEventListener('DOMContentLoaded', () => {
@@ -196,6 +212,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 2. Iniciar filtros por categoría
   iniciarFiltros();
+
+  // 3. Menú hamburguesa
+  iniciarHamburger();
 
   // Módulos pendientes: catálogo, filtros, menú hamburguesa y navegación activa
 });
