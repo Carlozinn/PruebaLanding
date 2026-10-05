@@ -19,6 +19,10 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Coyoteando – A la caza de la mejor tecnología" />
   <meta name="twitter:image" content="https://carlozinn.github.io/Coyoteando/images/logo.png" />
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/logo.png" />
+  <link rel="apple-touch-icon" href="images/logo.png" />
+
   <title>Coyoteando | A la caza de la mejor tecnología</title>
 
   <!-- Google Fonts: Chakra Petch (títulos display) + Inter (cuerpo) -->
@@ -393,9 +397,171 @@
       </div>
     </section>
 
-  <!-- POLITICAS DE SEGURIDAD -->
+    <!-- ============================================================
+         SECCIÓN 5: POLÍTICAS DE SEGURIDAD (Acordeón)
+         ============================================================ -->
+    <section id="politicas" class="section section-politicas" aria-labelledby="politicas-title">
+      <div class="container">
+
+        <h2 id="politicas-title" class="section-title">Políticas de seguridad</h2>
+        <p class="section-subtitle">Tu tranquilidad es nuestra prioridad</p>
+
+        <div class="accordion" id="accordion-politicas">
+
+          <!-- Acordeón 1: Protección de datos -->
+          <div class="accordion-item">
+            <button
+              class="accordion-btn"
+              type="button"
+              aria-expanded="false"
+              aria-controls="panel-datos"
+              id="btn-datos"
+            >
+              <span class="accordion-icon" aria-hidden="true">🔐</span>
+              Protección de datos personales
+              <span class="accordion-chevron" aria-hidden="true">▼</span>
+            </button>
+            <div class="accordion-panel" id="panel-datos" role="region" aria-labelledby="btn-datos" hidden>
+              <div class="accordion-content">
+                <p>En Coyoteando la privacidad de nuestros clientes es fundamental. Recopilamos únicamente los datos necesarios para procesar tus pedidos y mejorar tu experiencia de compra.</p>
+                <ul>
+                  <li>Tus datos <strong>nunca</strong> son vendidos ni compartidos con terceros sin tu consentimiento explícito.</li>
+                  <li>Utilizamos cifrado SSL en todas las transacciones y formularios del sitio.</li>
+                  <li>Puedes solicitar la consulta, rectificación o eliminación de tus datos escribiendo a <a href="mailto:privacidad@coyoteando.mx">privacidad@coyoteando.mx</a>.</li>
+                  <li>Cumplimos con la <abbr title="Ley Federal de Protección de Datos Personales en Posesión de los Particulares">LFPDPPP</abbr> de México.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Acordeón 2: Pagos seguros -->
+          <div class="accordion-item">
+            <button
+              class="accordion-btn"
+              type="button"
+              aria-expanded="false"
+              aria-controls="panel-pagos"
+              id="btn-pagos"
+            >
+              <span class="accordion-icon" aria-hidden="true">💳</span>
+              Pagos seguros
+              <span class="accordion-chevron" aria-hidden="true">▼</span>
+            </button>
+            <div class="accordion-panel" id="panel-pagos" role="region" aria-labelledby="btn-pagos" hidden>
+              <div class="accordion-content">
+                <p>Todas las transacciones en Coyoteando están protegidas con tecnología de cifrado de nivel bancario.</p>
+                <ul>
+                  <li>Aceptamos tarjetas de crédito y débito (Visa, MasterCard, American Express), transferencia SPEI y pago en efectivo en tiendas de conveniencia.</li>
+                  <li>Nuestro sitio cuenta con certificado SSL (HTTPS). <strong>Nunca almacenamos</strong> tus datos de tarjeta.</li>
+                  <li>Las transacciones son procesadas por pasarelas certificadas con estándar <abbr title="Payment Card Industry Data Security Standard">PCI-DSS</abbr>.</li>
+                  <li>Si detectas un cargo no reconocido, contáctanos de inmediato al (800) 123-4567.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Acordeón 3: Garantía y devoluciones -->
+          <div class="accordion-item">
+            <button
+              class="accordion-btn"
+              type="button"
+              aria-expanded="false"
+              aria-controls="panel-garantia"
+              id="btn-garantia"
+            >
+              <span class="accordion-icon" aria-hidden="true">🛡️</span>
+              Garantía y devoluciones
+              <span class="accordion-chevron" aria-hidden="true">▼</span>
+            </button>
+            <div class="accordion-panel" id="panel-garantia" role="region" aria-labelledby="btn-garantia" hidden>
+              <div class="accordion-content">
+                <p>Todos los productos Coyoteando incluyen garantía mínima de 12 meses contra defectos de fábrica.</p>
+                <ul>
+                  <li><strong>Devoluciones:</strong> Tienes 30 días naturales para devolver cualquier producto en su empaque original y sin uso.</li>
+                  <li><strong>Defecto de fábrica:</strong> Reposición o reparación sin costo adicional para el cliente.</li>
+                  <li><strong>Proceso:</strong> Contacta soporte → recibe etiqueta de devolución prepagada → reembolso o cambio en 5 días hábiles.</li>
+                  <li>La garantía no aplica por daños causados por mal uso, humedad no declarada en las especificaciones del producto o modificaciones no autorizadas.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Acordeón 4: Cookies -->
+          <div class="accordion-item">
+            <button
+              class="accordion-btn"
+              type="button"
+              aria-expanded="false"
+              aria-controls="panel-cookies"
+              id="btn-cookies"
+            >
+              <span class="accordion-icon" aria-hidden="true">🍪</span>
+              Política de cookies
+              <span class="accordion-chevron" aria-hidden="true">▼</span>
+            </button>
+            <div class="accordion-panel" id="panel-cookies" role="region" aria-labelledby="btn-cookies" hidden>
+              <div class="accordion-content">
+                <p>Usamos cookies para mejorar tu experiencia de navegación y analizar el uso del sitio de forma anónima.</p>
+                <ul>
+                  <li><strong>Cookies esenciales:</strong> Necesarias para el funcionamiento básico del sitio (sesión, carrito). No pueden desactivarse.</li>
+                  <li><strong>Cookies de análisis:</strong> Nos permiten entender cómo navegas el sitio (herramientas como Google Analytics). Son opcionales.</li>
+                  <li><strong>Cookies de marketing:</strong> Usadas para mostrarte anuncios relevantes en otras plataformas. Son opcionales y puedes rechazarlas.</li>
+                  <li>Puedes gestionar o eliminar tus preferencias de cookies desde la configuración de tu navegador en cualquier momento.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <p class="politicas-update">
+          Última actualización: <time datetime="2026-10-01">octubre 2026</time>.
+          Para dudas sobre estas políticas escríbenos a
+          <a href="mailto:legal@coyoteando.mx">legal@coyoteando.mx</a>.
+        </p>
+
+      </div>
+    </section>
 
   </main>
+
+  <!-- ====================================================
+       FOOTER
+       ==================================================== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-grid">
+
+      <div class="footer-brand">
+        <img src="images/logo.png" alt="Logo Coyoteando" class="footer-logo" width="140" />
+        <p class="footer-tagline">A la caza de la mejor tecnología.</p>
+        <p class="footer-desc">Gadgets premium para México. Calidad garantizada, precio justo.</p>
+      </div>
+
+      <nav class="footer-nav" aria-label="Navegación del pie de página">
+        <h3 class="footer-heading">Navegación</h3>
+        <ul role="list">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#quienes-somos">¿Quiénes somos?</a></li>
+          <li><a href="#productos">Productos / Servicios</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+          <li><a href="#politicas">Políticas de seguridad</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer-contact-info">
+        <h3 class="footer-heading">Contacto rápido</h3>
+        <p>📧 <a href="mailto:hola@coyoteando.mx">hola@coyoteando.mx</a></p>
+        <p>📱 +52 (800) 123-4567</p>
+        <p>🏙️ Ciudad de México, México</p>
+        <p>🕐 Lun–Vie 9:00–18:00 h</p>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Coyoteando. Todos los derechos reservados. | Hecho con ⚡ y espíritu cazador.</p>
+    </div>
+  </footer>
 
   <!-- JS principal (vanilla JS) -->
   <script src="js/main.js"></script>

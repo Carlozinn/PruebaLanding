@@ -350,6 +350,43 @@ function iniciarFormulario() {
 }
 
 /* ============================================================
+   5. ACORDEÓN DE POLÍTICAS DE SEGURIDAD
+   ============================================================ */
+function iniciarAcordeon() {
+  const btns = document.querySelectorAll('.accordion-btn');
+  if (!btns.length) return;
+
+  btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const estaAbierto = btn.getAttribute('aria-expanded') === 'true';
+      const panelId     = btn.getAttribute('aria-controls');
+      const panel       = document.getElementById(panelId);
+
+      // Cerrar todos los paneles
+      btns.forEach(b => {
+        b.setAttribute('aria-expanded', 'false');
+        const p = document.getElementById(b.getAttribute('aria-controls'));
+        if (p) p.setAttribute('hidden', '');
+      });
+
+      // Abrir el seleccionado si estaba cerrado
+      if (!estaAbierto && panel) {
+        btn.setAttribute('aria-expanded', 'true');
+        panel.removeAttribute('hidden');
+      }
+    });
+
+    // Soporte de teclado: Enter y Espacio
+    btn.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        btn.click();
+      }
+    });
+  });
+}
+
+/* ============================================================
    INICIALIZACIÓN – DOMContentLoaded
    ============================================================ */
 document.addEventListener('DOMContentLoaded', () => {
@@ -368,5 +405,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // 5. Validación del formulario de contacto
   iniciarFormulario();
 
-  // Módulos de Jordi (formulario, acordeón, footer) se registran en sus ramas
+  // 6. Acordeón de políticas de seguridad
+  iniciarAcordeon();
 });
