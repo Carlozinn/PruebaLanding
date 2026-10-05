@@ -113,9 +113,65 @@ const PRODUCTOS = [
   }
 ];
 
+/** Formatea un número como precio en MXN (Intl.NumberFormat) */
+function formatPrecio(precio) {
+  return new Intl.NumberFormat('es-MX', {
+    style: 'currency',
+    currency: 'MXN',
+    minimumFractionDigits: 0
+  }).format(precio);
+}
+
+/** Crea el HTML de una tarjeta de producto */
+function crearTarjetaHTML(producto) {
+  const badge = producto.badge
+    ? `<span class="product-badge" aria-label="Etiqueta: ${producto.badge}">${producto.badge}</span>`
+    : '';
+
+  return `
+    <article class="product-card" data-categoria="${producto.categoria}" aria-label="Producto: ${producto.nombre}">
+      ${badge}
+      <div class="product-emoji" aria-hidden="true">${producto.emoji}</div>
+      <span class="product-category">${producto.categoriaLabel}</span>
+      <h3 class="product-name">${producto.nombre}</h3>
+      <p class="product-desc">${producto.descripcion}</p>
+      <p class="product-price">${formatPrecio(producto.precio)} <small>MXN</small></p>
+      <button
+        class="product-btn"
+        type="button"
+        aria-label="Agregar ${producto.nombre} al carrito de compras"
+      >
+        Agregar al carrito
+      </button>
+    </article>
+  `.trim();
+}
+
+/** Renderiza los productos en el grid según el filtro activo */
+function renderProductos(filtro) {
+  const grid = document.getElementById('productos-grid');
+  if (!grid) return;
+
+  const filtrados = (filtro === 'todos')
+    ? PRODUCTOS
+    : PRODUCTOS.filter(p => p.categoria === filtro);
+
+  if (filtrados.length === 0) {
+    grid.innerHTML = '<p class="no-results">No hay productos en esta categoría aún. ¡Vuelve pronto!</p>';
+    grid.setAttribute('aria-label', 'Catálogo – sin resultados');
+    return;
+  }
+
+  grid.innerHTML = filtrados.map(crearTarjetaHTML).join('');
+  grid.setAttribute('aria-label', `Catálogo de productos – ${filtrados.length} resultado(s)`);
+}
+
 /* ============================================================
    INICIALIZACIÓN – DOMContentLoaded
    ============================================================ */
 document.addEventListener('DOMContentLoaded', () => {
+  // 1. Renderizar el catálogo completo al cargar
+  renderProductos('todos');
+
   // Módulos pendientes: catálogo, filtros, menú hamburguesa y navegación activa
 });
