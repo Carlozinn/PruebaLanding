@@ -42,3 +42,67 @@ body {
 img { max-width: 100%; height: auto; }
 ul  { list-style: none; }
 a { color: inherit; text-decoration: none; }
+
+/* ============================================================
+   HEADER / NAVBAR
+   ============================================================ */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: 72px;
+  background: rgba(243, 237, 228, 0.96);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(20, 16, 13, 0.12);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  width: min(1200px, 100% - 2rem);
+  margin-inline: auto;
+}
+
+.nav-logo img {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+  transition: transform var(--tr);
+}
+.nav-logo:hover img { transform: scale(1.05); }
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-link {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--clr-dark-brown);
+  padding: 0.3rem 0;
+  position: relative;
+  transition: color var(--tr);
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--clr-cyan);
+  border-radius: 1px;
+  transition: width var(--tr);
+}
+.nav-link:hover,
+.nav-link.active { color: var(--clr-primary); }
+.nav-link:hover::after,
+.nav-link.active::after { width: 100%; }
