@@ -232,6 +232,41 @@ function iniciarHamburger() {
 }
 
 /* ============================================================
+   3. ENLACE ACTIVO EN EL SCROLL (IntersectionObserver)
+   ============================================================ */
+function iniciarNavActiva() {
+  const navLinks = document.querySelectorAll('.nav-link');
+  const sections = document.querySelectorAll('section[id]');
+  if (!navLinks.length || !sections.length) return;
+
+  const headerH = parseInt(
+    getComputedStyle(document.documentElement).getPropertyValue('--header-h') || '72',
+    10
+  );
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        link.removeAttribute('aria-current');
+      });
+      const activeLink = document.querySelector(`.nav-link[href="#${entry.target.id}"]`);
+      if (activeLink) {
+        activeLink.classList.add('active');
+        activeLink.setAttribute('aria-current', 'page');
+      }
+    });
+  }, {
+    root: null,
+    rootMargin: `-${headerH + 10}px 0px -55% 0px`,
+    threshold: 0
+  });
+
+  sections.forEach(sec => observer.observe(sec));
+}
+
+/* ============================================================
    INICIALIZACIÓN – DOMContentLoaded
    ============================================================ */
 document.addEventListener('DOMContentLoaded', () => {
@@ -244,5 +279,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // 3. Menú hamburguesa
   iniciarHamburger();
 
-  // Módulos pendientes: catálogo, filtros, menú hamburguesa y navegación activa
+  // 4. Enlace activo según el scroll
+  iniciarNavActiva();
+
+  // Módulos de Jordi (formulario, acordeón, footer) se registran en sus ramas
 });
