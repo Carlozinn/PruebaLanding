@@ -42,3 +42,27 @@ cd Coyoteando
 
 Después abre `index.html` directamente en tu navegador, o usa la extensión
 **Live Server** de VS Code (clic derecho sobre `index.html` → *Open with Live Server*).
+
+## 🛠 Tecnologías
+
+- **HTML5** semántico y accesible (ARIA, skip-link, foco visible)
+- **CSS3** con variables, Grid, Flexbox y media queries
+- **JavaScript ES6+** puro (sin frameworks ni librerías)
+
+## 📝 Convención de commits
+
+| Tipo | Uso | Ejemplo |
+|------|-----|---------|
+| `feat:` | Nueva funcionalidad | `feat: agregar sección Inicio con hero` |
+| `fix:` | Corrección de errores | `fix: cerrar menú móvil con Escape` |
+| `style:` | Estilos / diseño | `style: estilizar tarjetas de productos` |
+| `docs:` | Documentación | `docs: agregar README` |
+| `chore:` | Mantenimiento | `chore: agregar .gitignore` |
+| `a11y:` | Accesibilidad | `a11y: completar atributos ARIA` |
+| `seo:` | Metadatos / SEO | `seo: agregar Open Graph` |
+| `release:` | Preparación de versión | `release: changelog v1.0.0` |
+
+## 🌿 Ramas principales
+
+- **`main`** – versión estable publicada en GitHub Pages.
+- **`develop`** – rama de integración; cada rama de funcionalidad se fusiona aquí antes de pasar a `main`.
