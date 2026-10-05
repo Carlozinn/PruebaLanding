@@ -1,0 +1,24 @@
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Editores
+.vscode/
+
+# Dependencias
+node_modules/
+
+# Respaldos y temporales
+*.bak
+*.tmp
+*.swp
+
+# Entorno
+.env
+
+# Otros sistemas / IDEs
+desktop.ini
+.idea/
