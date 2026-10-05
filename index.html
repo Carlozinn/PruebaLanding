@@ -97,7 +97,55 @@
 
   <!-- QUIENES SOMOS -->
 
-  <!-- PRODUCTOS / SERVICIOS -->
+    <!-- PRODUCTOS / SERVICIOS -->
+    <section id="productos" class="section section-productos">
+      <div class="container">
+
+        <h2 id="productos-title" class="section-title">Productos / Servicios</h2>
+        <p class="section-subtitle">Tecnología de caza — encuentra tu gadget perfecto</p>
+
+        <!-- Filtros por categoría -->
+        <div class="filter-bar" role="group" aria-label="Filtrar productos por categoría">
+          <button class="filter-btn active" data-filter="todos"        type="button" aria-pressed="true">Todos</button>
+          <button class="filter-btn"        data-filter="audifonos"    type="button" aria-pressed="false">🎧 Audífonos</button>
+          <button class="filter-btn"        data-filter="cargadores"   type="button" aria-pressed="false">⚡ Cargadores</button>
+          <button class="filter-btn"        data-filter="smartwatches" type="button" aria-pressed="false">⌚ Smartwatches</button>
+          <button class="filter-btn"        data-filter="tablets"      type="button" aria-pressed="false">📱 Tablets</button>
+        </div>
+
+        <!-- Cuadrícula de productos – llenada por main.js -->
+        <div class="productos-grid" id="productos-grid" aria-live="polite">
+          <!-- Los productos se insertan dinámicamente desde js/main.js -->
+        </div>
+
+        <!-- Servicios -->
+        <div class="servicios-section">
+          <h3 id="servicios-title" class="servicios-title">Nuestros servicios</h3>
+          <div class="servicios-grid">
+
+            <article class="servicio-card">
+              <div class="servicio-icon" aria-hidden="true">🛡️</div>
+              <h4>Garantía</h4>
+              <p>Mínimo 12 meses en todos los productos. Proceso de cambio sin complicaciones ni letra chica.</p>
+            </article>
+
+            <article class="servicio-card">
+              <div class="servicio-icon" aria-hidden="true">💬</div>
+              <h4>Asesoría</h4>
+              <p>Expertos te guían para elegir el gadget ideal según tu presupuesto y necesidades reales.</p>
+            </article>
+
+            <article class="servicio-card">
+              <div class="servicio-icon" aria-hidden="true">🚚</div>
+              <h4>Envíos</h4>
+              <p>Entrega a toda la República Mexicana. Envío gratis en compras mayores a $1,500 MXN.</p>
+            </article>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
 
   <!-- CONTACTO -->
 
