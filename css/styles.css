@@ -880,3 +880,95 @@ h1, h2, h3, h4, h5 {
 @media (max-width: 1024px) {
   .contacto-grid { grid-template-columns: 1fr; }
 }
+
+/* ============================================================
+   POLÍTICAS DE SEGURIDAD – Acordeón
+   ============================================================ */
+.section-politicas { background: var(--clr-bg); }
+
+.accordion {
+  max-width: 820px;
+  margin: 0 auto var(--sp-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.accordion-item {
+  background: var(--clr-card);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: box-shadow var(--tr);
+}
+.accordion-item:has(.accordion-btn[aria-expanded="true"]) {
+  box-shadow: var(--shadow-md);
+}
+
+.accordion-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: var(--sp-sm);
+  padding: 1.1rem 1.25rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--clr-dark-brown);
+  transition: background var(--tr-fast), color var(--tr-fast);
+}
+.accordion-btn:hover {
+  background: rgba(20,16,13,0.04);
+}
+.accordion-btn[aria-expanded="true"] {
+  background: var(--clr-dark-brown);
+  color: var(--clr-white);
+}
+.accordion-btn[aria-expanded="true"] .accordion-chevron {
+  transform: rotate(180deg);
+  color: var(--clr-cyan);
+}
+
+.accordion-icon    { font-size: 1.2rem; flex-shrink: 0; }
+.accordion-chevron {
+  margin-left: auto;
+  font-size: 0.78rem;
+  color: var(--clr-brown);
+  transition: transform var(--tr), color var(--tr);
+}
+
+.accordion-panel {
+  border-top: 1px solid var(--clr-border);
+}
+
+.accordion-content {
+  padding: 1.25rem 1.5rem;
+}
+
+.accordion-content p { margin-bottom: var(--sp-sm); font-size: 0.95rem; }
+.accordion-content ul {
+  list-style: disc;
+  padding-left: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+.accordion-content a {
+  color: var(--clr-primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.politicas-update {
+  max-width: 820px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--clr-brown);
+}
+.politicas-update a { color: var(--clr-primary); text-decoration: underline; }
