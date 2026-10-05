@@ -3,6 +3,7 @@
 > *A la caza de la mejor tecnología.*
 
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-activo-22C4F2?logo=github)](https://carlozinn.github.io/Coyoteando/)
+[![Versión](https://img.shields.io/badge/versión-v1.0.0-E8913A)](https://github.com/Carlozinn/Coyoteando/releases/tag/v1.0.0)
 
 **Coyoteando** es la landing page de una tienda en línea de artículos electrónicos
 (audífonos, cargadores inalámbricos, smartwatches y tablets). Está construida con
@@ -66,3 +67,19 @@ Después abre `index.html` directamente en tu navegador, o usa la extensión
 
 - **`main`** – versión estable publicada en GitHub Pages.
 - **`develop`** – rama de integración; cada rama de funcionalidad se fusiona aquí antes de pasar a `main`.
+
+## 📋 Changelog
+
+### v1.0.0 – 2025-01-15
+
+- Primera versión completa de la landing page Coyoteando.
+- 5 secciones: Inicio, ¿Quiénes somos?, Productos / Servicios, Contacto y Políticas de seguridad.
+- Catálogo de productos renderizado con JavaScript y filtros por categoría.
+- Formulario de contacto validado con JavaScript.
+- Acordeón accesible en Políticas de seguridad.
+- Diseño responsive (desktop, tablet y móvil) con menú hamburguesa.
+- Publicación en GitHub Pages.
+
+---
+
+Desarrollado como actividad académica para la materia Tecnologías para la construcción de software.
