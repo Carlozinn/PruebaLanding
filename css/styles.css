@@ -27,6 +27,12 @@
   /* Bordes y transiciones */
   --radius: 12px;
   --tr:     0.3s ease;
+  --clr-light: #FAF7F2;  /* Fondo de sección alternada */
+  --sp-xs:  0.5rem;
+  --radius-lg: 20px;
+  --shadow-sm: 0 2px 8px rgba(20,16,13,0.08);
+  --shadow-md: 0 4px 20px rgba(20,16,13,0.14);
+  --shadow-cyan: 0 0 22px rgba(34,196,242,0.25);
 }
 
 /* ============================================================
@@ -607,3 +613,270 @@ h1, h2, h3, h4, h5 {
   color: var(--clr-brown);
 }
 .servicios-nota abbr { text-decoration: underline dotted; cursor: help; }
+
+/* ============================================================
+   QUIÉNES SOMOS
+   ============================================================ */
+.section-quienes {
+  background: var(--clr-light);
+}
+
+.quienes-historia {
+  max-width: 760px;
+  margin: 0 auto var(--sp-xl);
+  text-align: center;
+}
+.quienes-historia p {
+  margin-bottom: var(--sp-sm);
+  font-size: 1.05rem;
+}
+
+/* Grid Misión / Visión / Valores */
+.mvv-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-md);
+  margin-bottom: var(--sp-xl);
+}
+
+.mvv-card {
+  background: var(--clr-card);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-lg);
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--tr), box-shadow var(--tr);
+}
+.mvv-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+
+.mvv-icon {
+  font-size: 2.6rem;
+  margin-bottom: var(--sp-sm);
+}
+
+.mvv-card h3 {
+  font-size: 1.2rem;
+  color: var(--clr-primary);
+  margin-bottom: var(--sp-xs);
+}
+
+.values-list {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  font-size: 0.93rem;
+}
+
+/* Estadísticas */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-sm);
+  background: var(--clr-dark-brown);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-lg);
+}
+
+.stat-item {
+  text-align: center;
+  color: var(--clr-white);
+}
+
+.stat-number {
+  display: block;
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3vw, 2.1rem);
+  font-weight: 700;
+  color: var(--clr-cyan);
+  margin-bottom: 0.3rem;
+}
+
+.stat-label {
+  font-size: 0.82rem;
+  opacity: 0.85;
+}
+
+
+/* ============================================================
+   RESPONSIVE – Quiénes somos en celular
+   ============================================================ */
+@media (max-width: 768px) {
+  .mvv-grid  { grid-template-columns: 1fr; }
+  .stats-row { grid-template-columns: 1fr 1fr; }
+}
+
+/* ============================================================
+   CONTACTO
+   ============================================================ */
+.section-contacto { background: var(--clr-light); }
+
+.contacto-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: var(--sp-xl);
+  align-items: start;
+}
+
+/* Formulario */
+.form-wrapper {
+  background: var(--clr-card);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.form-title {
+  font-size: 1.2rem;
+  margin-bottom: var(--sp-md);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: var(--sp-sm);
+}
+
+.form-label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--clr-dark-brown);
+}
+
+.required {
+  color: #e53e3e;
+  margin-left: 2px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--clr-border);
+  border-radius: var(--radius);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--clr-text);
+  background: var(--clr-bg);
+  transition: border-color var(--tr), box-shadow var(--tr);
+}
+.form-input:focus {
+  outline: none;
+  border-color: var(--clr-cyan);
+  box-shadow: 0 0 0 3px rgba(34,196,242,0.18);
+}
+.form-input.error   { border-color: #e53e3e; }
+.form-input.success { border-color: #38a169; }
+
+.form-textarea {
+  min-height: 120px;
+  font-family: var(--font-body);
+}
+
+.form-error {
+  font-size: 0.8rem;
+  color: #e53e3e;
+  font-weight: 600;
+  min-height: 1.1rem;
+  display: block;
+}
+
+.form-success {
+  margin-top: var(--sp-sm);
+  padding: var(--sp-sm);
+  background: #f0fff4;
+  border: 1px solid #9ae6b4;
+  border-radius: var(--radius);
+  color: #276749;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Info de contacto */
+.contacto-info-title {
+  font-size: 1.2rem;
+  margin-bottom: var(--sp-md);
+}
+
+.contacto-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-sm);
+  margin-bottom: var(--sp-lg);
+}
+
+.contacto-list li {
+  display: flex;
+  gap: var(--sp-sm);
+  align-items: flex-start;
+}
+
+.contact-icon {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.contacto-list div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.12rem;
+}
+
+.contacto-list strong {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--clr-brown);
+}
+
+.contact-link {
+  color: var(--clr-primary);
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.contact-link:hover { color: var(--clr-dark-brown); }
+
+.social-heading {
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--clr-brown);
+  margin-bottom: 0.75rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.social-link {
+  padding: 0.4rem 1rem;
+  border: 2px solid var(--clr-border);
+  border-radius: 50px;
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 700;
+  transition: all var(--tr);
+}
+.social-link:hover {
+  background: var(--clr-cyan);
+  border-color: var(--clr-cyan);
+  color: var(--clr-dark-brown);
+}
+
+/* ============================================================
+   RESPONSIVE – Contacto en tablet y celular
+   ============================================================ */
+@media (max-width: 1024px) {
+  .contacto-grid { grid-template-columns: 1fr; }
+}
