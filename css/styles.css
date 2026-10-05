@@ -46,6 +46,51 @@ ul  { list-style: none; }
 a { color: inherit; text-decoration: none; }
 
 /* ============================================================
+   TIPOGRAFÍA GLOBAL
+   ============================================================ */
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-display);
+  line-height: 1.2;
+  color: var(--clr-dark-brown);
+}
+
+/* ============================================================
+   UTILIDADES GENERALES
+   ============================================================ */
+.container {
+  width: min(1200px, 100% - 2rem);
+  margin-inline: auto;
+}
+
+.section {
+  padding-block: var(--sp-xxl);
+}
+
+.section-title {
+  font-size: clamp(1.75rem, 4vw, 2.6rem);
+  text-align: center;
+  margin-bottom: 0.4rem;
+}
+.section-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--clr-primary), var(--clr-cyan));
+  border-radius: 2px;
+  margin: 0.6rem auto 0;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: var(--clr-brown);
+  font-size: 1.05rem;
+  margin-bottom: 2.5rem;
+}
+
+.accent { color: var(--clr-primary); }
+
+/* ============================================================
    HEADER / NAVBAR
    ============================================================ */
 .site-header {
